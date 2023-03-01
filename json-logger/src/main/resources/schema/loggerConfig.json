@@ -27,7 +27,35 @@
             "example": "${mule.env}",
             "summary": "Name of the Mule Environment where the application is running. Recommendation: This value should be based on external property"
           }
-        }
+        },
+        "internalRequestId": {
+          "type": "string",
+          "sdk": {
+            "default": "#[vars.ingressRequestAttributes.internalRequestId default 'N/A']",
+            "summary": "Internal request"
+          }
+        },
+        "channelId": {
+          "type": "string",
+          "sdk": {
+            "default": "#[vars.ingressRequestAttributes.channelId default 'N/A']",
+            "summary": "Channel ID"
+          }
+        },
+        "requestApplication": {
+          "type": "string",
+          "sdk": {
+            "default": "#[vars.ingressRequestAttributes.requestApplication default 'N/A']",
+            "summary": "Request application"
+          }
+        },
+        "requestOrigin": {
+          "type": "string",
+          "sdk": {
+            "default": "#[vars.ingressRequestAttributes.requestOrigin default 'N/A']",
+            "summary": "Request origin"
+          }
+        }                  
       },
       "sdk": {
         "parameterGroup": "Global Settings",

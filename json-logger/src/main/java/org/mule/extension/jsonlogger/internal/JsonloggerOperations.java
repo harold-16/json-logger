@@ -187,6 +187,10 @@ public class JsonloggerOperations {
 
             // Aggregate Logger data into mergedLogger
             ObjectNode mergedLogger = om.getObjectMapper().createObjectNode();
+            
+            // Move global info from config to the top
+            mergedLogger.setAll((ObjectNode) om.getObjectMapper().valueToTree(config.getGlobalSettings()));
+            
             mergedLogger.setAll((ObjectNode) om.getObjectMapper().valueToTree(loggerProcessor));
 
             /**
@@ -213,7 +217,7 @@ public class JsonloggerOperations {
                 mergedLogger.setAll(typedValuesAsJsonNode);
             }
             // 6. Global info from config
-            mergedLogger.setAll((ObjectNode) om.getObjectMapper().valueToTree(config.getGlobalSettings()));
+//            mergedLogger.setAll((ObjectNode) om.getObjectMapper().valueToTree(config.getGlobalSettings()));
             // 7. Thread Name
             mergedLogger.put("threadName", Thread.currentThread().getName());
             /** End field ordering **/
