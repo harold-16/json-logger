@@ -48,13 +48,6 @@
             "default": "#[vars.ingressRequestAttributes.requestApplication default 'N/A']",
             "summary": "Request application"
           }
-        },
-        "requestOrigin": {
-          "type": "string",
-          "sdk": {
-            "default": "#[vars.ingressRequestAttributes.requestOrigin default 'N/A']",
-            "summary": "Request origin"
-          }
         }                  
       },
       "sdk": {

@@ -48,7 +48,7 @@
         "summary": "Current processing stage"
       }
     },
-    "priority": {
+    "logLevel": {
       "type": "string",
       "javaType": "org.mule.extension.jsonlogger.api.pojos.Priority",
       "enum": [
@@ -60,7 +60,7 @@
       ],
       "sdk": {
         "default": "INFO",
-        "summary": "Logger priority"
+        "summary": "Log level"
       },
       "note": "This field is mandatory. DON'T REMOVE"
     },

@@ -114,7 +114,7 @@ public class JsonloggerOperations {
         /**
          * Avoid Logger logic execution based on log priority
          */
-        if (isLogEnabled(loggerProcessor.getPriority().toString())) {
+        if (isLogEnabled(loggerProcessor.getLogLevel().toString())) {
             // Load disabledFields
             List<String> disabledFields = (config.getJsonOutput().getDisabledFields() != null) ? Arrays.asList(config.getJsonOutput().getDisabledFields().split(",")) : new ArrayList<>();
             LOGGER.debug("The following fields will be disabled for logging: " + disabledFields);
@@ -223,7 +223,7 @@ public class JsonloggerOperations {
             /** End field ordering **/
 
             /** Print Logger **/
-            String finalLog = printObjectToLog(mergedLogger, loggerProcessor.getPriority().toString(), config.getJsonOutput().isPrettyPrint());
+            String finalLog = printObjectToLog(mergedLogger, loggerProcessor.getLogLevel().toString(), config.getJsonOutput().isPrettyPrint());
 
             /** Forward Log to External Destination **/
             if (config.getExternalDestination() != null) {
