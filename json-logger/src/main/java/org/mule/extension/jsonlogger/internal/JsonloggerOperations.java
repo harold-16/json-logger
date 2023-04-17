@@ -203,7 +203,10 @@ public class JsonloggerOperations {
             // 2. Location Info: Logger location within Mule application
             if (config.getJsonOutput().isLogLocationInfo()) {
                 Map<String, String> locationInfo = locationInfoToMap(location);
-                mergedLogger.putPOJO("locationInfo", locationInfo);
+//                mergedLogger.putPOJO("locationInfo", locationInfo);
+                locationInfo.forEach((key, value) -> {
+                	mergedLogger.put(key, value);
+                });
             }
             // 3. Timestamp: Add formatted timestamp entry to the logger
             mergedLogger.put("timestamp", getFormattedTimestamp(loggerTimestamp));
